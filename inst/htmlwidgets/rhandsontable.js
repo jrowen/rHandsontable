@@ -370,6 +370,7 @@ function csvString(instance, sep, dec) {
       for (var h in headers) {
           var col = instance.propToCol(h);
           var value = instance.getDataAtRowProp(i, col);
+          if (value == null) value = "";  // Handle null or undefined values  // handle
           if ( !isNaN(value) ) {
             value = value.toString().replace(".", dec);
           }
